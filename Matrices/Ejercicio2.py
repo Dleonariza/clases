@@ -1,3 +1,12 @@
+def crearMatriz(fils, cols):
+    matriz = []
+    for f in range(fils):
+        lista = []
+        for c in range(cols):
+            lista.append(1)
+        matriz.append(lista)
+    return matriz
+
 def matrizOpcion1(fils, cols):
     matriz = []
     aumento = 1
@@ -57,6 +66,41 @@ def matrizOpcion4(fils, cols):
         matriz.append(lista)
     return matriz
 
+def matrizOpcion5(fils, cols):
+    matriz = []
+    for f in range(fils):
+        lista = []
+        for c in range(cols):
+            if c > f:
+                lista.append(0)
+            else:
+                lista.append(1)
+        matriz.append(lista)
+    return matriz
+
+def matrizOpcion6(fils, cols):
+    matriz = []
+    for f in range(fils):
+        lista = []
+        for c in range(cols):
+            if c < f:
+                lista.append(0)
+            else:
+                lista.append(1)
+        matriz.append(lista)
+    return matriz
+
+def matrizOpcion7(fils, cols):
+    matriz = crearMatriz(fils, cols)
+    cont = 1
+    f = 0
+    for c in range(cols):
+        matriz[c][f] = cont
+        while f < fils:
+            cont += 1
+            f += 1
+    return matriz
+
 def imprimirMatriz(matriz):
     for f in range(len(matriz)):
         for c in range(len(matriz[0])):
@@ -93,4 +137,20 @@ else:
     matriz4 = matrizOpcion4(filas, columnas)
     imprimirMatriz(matriz4)
 
-    
+    print("\n")
+    print("MATRIZ OPCION 5".center(24,"="))
+    print("\n")
+    matriz5 = matrizOpcion5(filas, columnas)
+    imprimirMatriz(matriz5)
+
+    print("\n")
+    print("MATRIZ OPCION 6".center(24,"="))
+    print("\n")
+    matriz6 = matrizOpcion6(filas, columnas)
+    imprimirMatriz(matriz6)
+
+    print("\n")
+    print("MATRIZ OPCION 7".center(24,"="))
+    print("\n")
+    matriz7 = matrizOpcion7(filas, columnas)
+    imprimirMatriz(matriz7)
