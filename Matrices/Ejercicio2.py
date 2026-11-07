@@ -95,11 +95,25 @@ def matrizOpcion7(fils, cols):
     cont = 1
     f = 0
     for c in range(cols):
-        matriz[c][f] = cont
-        while f < fils:
+        for f in range(fils):
+            matriz[f][c] = cont
             cont += 1
-            f += 1
     return matriz
+
+def matrizOpcion8(fils, cols):
+    matriz = []
+    for f in range(fils):
+        lista = []
+        for c in range(cols):
+            if (c < f or c == f) and c % 2 != 0:
+                lista.append("B")
+            elif (c < f or c == f) and c % 2 == 0:
+                lista.append("A")
+            else:
+                lista.append(" ")
+        matriz.append(lista)
+    return matriz
+
 
 def imprimirMatriz(matriz):
     for f in range(len(matriz)):
@@ -154,3 +168,9 @@ else:
     print("\n")
     matriz7 = matrizOpcion7(filas, columnas)
     imprimirMatriz(matriz7)
+
+    print("\n")
+    print("MATRIZ OPCION 8".center(24,"="))
+    print("\n")
+    matriz8 = matrizOpcion8(filas, columnas)
+    imprimirMatriz(matriz8)
