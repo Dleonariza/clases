@@ -1,0 +1,9 @@
+este es un
+archivo de ejemplo
+para aprender la
+manipulacion de archivos
+con Python.
+
+Anteriormente se hizo un cambio de párrafo
+para observar que significa esto en la gestión
+de archivos.
